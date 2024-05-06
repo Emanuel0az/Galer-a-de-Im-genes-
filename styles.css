@@ -1,5 +1,6 @@
-#titulo {
-    
+#titulo{
+    position: relative;
+    margin-left: 40%;
 }
 
 
@@ -9,7 +10,7 @@
 }
 
 .card .img {
-    width: 271px;
+    width: 275px;
     height: 250px;
 }
 

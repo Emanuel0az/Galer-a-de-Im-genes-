@@ -9,12 +9,14 @@ button.addEventListener('click', (e) =>{
         password: password.value
     }
 
-    localStorage.setItem("username", data.username)
-    localStorage.setItem("password", data.password)
+    localStorage.getItem("username", data.username)
+    localStorage.getItem("password", data.password)
 
-    if (data.username != "" && data.password != "") {
+    
+
+    if (data.username == localStorage.username && data.password == localStorage.password) {
         swal({
-            title: "Registrado",
+            title: "Bienvenido",
           })
         .then((willDelete) => {
             if(willDelete) {
@@ -24,12 +26,7 @@ button.addEventListener('click', (e) =>{
         document.getElementById('username').value = "";
         document.getElementById('password').value = "";
     }
-    
 
-
-
-   
-   
 
 })
 

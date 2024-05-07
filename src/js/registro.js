@@ -15,7 +15,14 @@ button.addEventListener('click', (e) =>{
     localStorage.setItem("mail", data.mail)
     localStorage.setItem("password", data.password)
 
-    if (data.username != "" && data.password != "") {
+
+
+
+    datos.push([...data])
+
+    if (data.username != "" && data.password != "" && data.mail != ""){
+        let users = []
+        users.push(username.value)
         swal({
             title: "Registrado",
           })

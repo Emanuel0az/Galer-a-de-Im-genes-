@@ -12,18 +12,24 @@ button.addEventListener('click', (e) =>{
     localStorage.setItem("username", data.username)
     localStorage.setItem("password", data.password)
 
-    document.getElementById('username').value = ""
-    document.getElementById('password').value = ""
+    if (data.username != "" && data.password != "") {
+        swal({
+            title: "Registrado",
+          })
+        .then((willDelete) => {
+            if(willDelete) {
+                window.location.href = "index.html"
+            }
+        })
+        document.getElementById('username').value = "";
+        document.getElementById('password').value = "";
+    }
+    
+
+
+
+   
+   
+
 })
 
-function mostrarAlerta(){
-    swal({
-        title: "Registrado",
-      })
-    .then((willDelete) => {
-        if(willDelete) {
-            swal(window.location.href = "http://127.0.0.1:5500/index.html")
-        }
-    })
-
-}

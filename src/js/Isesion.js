@@ -8,5 +8,10 @@ button.addEventListener('click', (e) =>{
         username: username.value,
         password: password.value
     }
-    console.log(data)
+
+    localStorage.setItem("username", data.username)
+    localStorage.setItem("password", data.password)
+
+    document.getElementById('username').value = ""
+    document.getElementById('password').value = ""
 })

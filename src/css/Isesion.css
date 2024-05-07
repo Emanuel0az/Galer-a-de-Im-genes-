@@ -10,7 +10,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(to right, rgb(64,177,7), rgb(50,142,5));
+    background: linear-gradient(to right, rgb(122, 241, 62), rgb(50,142,5));
 }
 
 form {
@@ -59,7 +59,7 @@ form .link {
 form button {
     color: #fff;
     border: none;
-    background: linear-gradient(to right, rgb(64,177,7), rgb(50,142,5));
+    background: linear-gradient(to right, rgb(122, 241, 62), rgb(50,142,5));
     padding: 10px 15px;
     cursor: pointer;
     font-size: 20px;

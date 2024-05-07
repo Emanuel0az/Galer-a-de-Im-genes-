@@ -15,3 +15,15 @@ button.addEventListener('click', (e) =>{
     document.getElementById('username').value = ""
     document.getElementById('password').value = ""
 })
+
+function mostrarAlerta(){
+    swal({
+        title: "Registrado",
+      })
+    .then((willDelete) => {
+        if(willDelete) {
+            swal(window.location.href = "http://127.0.0.1:5500/index.html")
+        }
+    })
+
+}

@@ -21,6 +21,8 @@ button.addEventListener('click', (e) =>{
         .then((willDelete) => {
             if(willDelete) {
                 window.location.href = "index.html"
+            }else{
+            
             }
 
         })

@@ -22,7 +22,9 @@ button.addEventListener('click', (e) =>{
             if(willDelete) {
                 window.location.href = "index.html"
             }
+
         })
+    
         document.getElementById('username').value = "";
         document.getElementById('password').value = "";
     }

@@ -10,17 +10,22 @@ let array = []
 
 // eventoa para que todo lo de abajo funcione haciendo click al boton
 button.addEventListener('click', (e) =>{
-    e.preventDefault()
-    const data = {
+    if (username.value != "" && password.value != "" && mail.value != "") {
+        
+        e.preventDefault()
+
+        const data = {
         username: username.value,
         password: password.value,
         mail: mail.value,
     }
+    
     array = JSON.parse(localStorage.getItem("array")) || []
 
     array.push(data)
 
     localStorage.setItem("array",JSON.stringify(array))
+    
     swal({
         title: "Registrado",
       })
@@ -28,15 +33,13 @@ button.addEventListener('click', (e) =>{
         if(willDelete) {
             window.location.href = "Isesion.html"
         }})
-    })
-
-    if (username != "" && password != "" && mail != "") {
-    
+        return true;
+    }else{
+        alert('los datos estan incompletos')
+        return false;
     }
     
-    // metodo para guardar en el local storage 
+})
     
-
-
-
- 
+    
+    // metodo para guardar en el local storage 

@@ -1,20 +1,20 @@
-const username = document.getElementById('username')
+const email = document.getElementById('email')
 const password = document.getElementById('password')
 const button = document.getElementById('button')
 
 button.addEventListener('click', (e) =>{
     e.preventDefault()
     const data = {
-        username: username.value,
+        email: email.value,
         password: password.value
     }
 
-    localStorage.getItem("username", data.username)
+    localStorage.getItem("email", data.email)
     localStorage.getItem("password", data.password)
 
     
 
-    if (data.username == localStorage.username && data.password == localStorage.password) {
+    if (data.email == localStorage.email && data.password == localStorage.password) {
         swal({
             title: "Bienvenido",
           })
@@ -27,7 +27,7 @@ button.addEventListener('click', (e) =>{
 
         })
     
-        document.getElementById('username').value = "";
+        document.getElementById('email').value = "";
         document.getElementById('password').value = "";
     }
 

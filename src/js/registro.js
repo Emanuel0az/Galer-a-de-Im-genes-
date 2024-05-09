@@ -1,7 +1,7 @@
 // variable que contiene los inputs y el boton
 const username = document.getElementById('username')
 const password = document.getElementById('password')
-const mail = document.getElementById('mail')
+const email = document.getElementById('email')
 const button = document.getElementById('button')
 let array = []
 
@@ -10,14 +10,14 @@ let array = []
 
 // eventoa para que todo lo de abajo funcione haciendo click al boton
 button.addEventListener('click', (e) =>{
-    if (username.value != "" && password.value != "" && mail.value != "") {
+    if (username.value != "" && password.value != "" && email.value != "") {
         
         e.preventDefault()
 
         const data = {
         username: username.value,
         password: password.value,
-        mail: mail.value,
+        email: email.value,
     }
     
     array = JSON.parse(localStorage.getItem("array")) || []

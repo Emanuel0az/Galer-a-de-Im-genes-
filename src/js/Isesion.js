@@ -2,35 +2,30 @@ const email = document.getElementById('email')
 const password = document.getElementById('password')
 const button = document.getElementById('button')
 
-button.addEventListener('click', (e) =>{
+button.addEventListener('click', (e) => {
     e.preventDefault()
-    const data = {
-        email: email.value,
-        password: password.value
-    }
 
-    localStorage.getItem("email", data.email)
-    localStorage.getItem("password", data.password)
+    usuarios = JSON.parse(localStorage.getItem("array")) || []
+    console.log(usuarios);
+    valores = usuarios.find(usu => usu.email == email.value && usu.password == password.value)
+    console.log(valores)
 
-    
-
-    if (data.email == localStorage.email && data.password == localStorage.password) {
+    if (!valores) {
+        swal("Error", "Contraseña ");
+    } else {
         swal({
             title: "Bienvenido",
-          })
-        .then((willDelete) => {
-            if(willDelete) {
-                window.location.href = "index.html"
-            }else{
-            
-            }
-
         })
-    
-        document.getElementById('email').value = "";
-        document.getElementById('password').value = "";
+            .then((willDelete) => {
+                if (willDelete) {
+                    window.location.href = "index.html"
+                    localStorage.setItem("array", JSON.stringify(usuarios))
+                }
+            })
     }
-
-
 })
+
+
+document.getElementById('email').value = "";
+document.getElementById('password').value = "";
 

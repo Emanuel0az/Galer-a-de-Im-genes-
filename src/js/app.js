@@ -1,5 +1,5 @@
-button.addEventListener('click'){
-function guardarImagen() {
+button.addEventListener('click')
+function guardarImagen(){ {
     let archivo = document.getElementById('imageUploader').files[0];
     let reader = new FileReader();
     

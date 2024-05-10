@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,59 +15,19 @@
             <form>
                 <input type="file" id="imageUploader" accept="image/*" id="cargar">
                 <button type="button" id="subir">Subir Imagen</button>
-              </form>
-              
+            </form>
+            <button id="logout">Cerrar Sesión</button>
         </nav>
     </header>
     <main>
         <h1 id="titulo">Galeria de Imagenes</h1>
 
-        <div class="cards">
-            <div class="card">
-                <div><img src="src/img/dino.png" alt="Dinosaurio" class="img"></div>
-                <div class="content">
-                    <h3>Dinosaurio</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima accusamus,
-                     incidunt aut nulla quasi voluptas necessitatibus consectetur distinctio,
-                      tempora sint assumenda dolore cumque veniam debitis tenetur aperiam velit obcaecati!
-                      Aspernatur.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div><img src="src/img/dino.png" alt="Dinosaurio" class="img"></div>
-                <div class="content">
-                    <h3>Dinosaurio</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima accusamus,
-                     incidunt aut nulla quasi voluptas necessitatibus consectetur distinctio,
-                      tempora sint assumenda dolore cumque veniam debitis tenetur aperiam velit obcaecati!
-                      Aspernatur.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div><img src="src/img/dino.png" alt="Dinosaurio" class="img"></div>
-                <div class="content">
-                    <h3>Dinosaurio</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima accusamus,
-                     incidunt aut nulla quasi voluptas necessitatibus consectetur distinctio,
-                      tempora sint assumenda dolore cumque veniam debitis tenetur aperiam velit obcaecati!
-                      Aspernatur.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div><img src="src/img/dino.png" alt="Dinosaurio" class="img"></div>
-                <div class="content">
-                    <h3>Dinosaurio</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima accusamus,
-                     incidunt aut nulla quasi voluptas necessitatibus consectetur distinctio,
-                      tempora sint assumenda dolore cumque veniam debitis tenetur aperiam velit obcaecati!
-                      Aspernatur.</p>
-                </div>
-            </div>
+        <div class="cards" id="galeria">
+            <!-- Imágenes subidas se agregarán aquí dinámicamente -->
         </div>
     </main>
-    
+<script src="src/js/app.js"></script>
+<script src="src/js/Isesion.js"></script>
+<script src="src/js/script.js"></script>
 </body>
 </html>

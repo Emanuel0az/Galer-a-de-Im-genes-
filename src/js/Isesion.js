@@ -1,36 +1,46 @@
-const email = document.getElementById('email')
-const password = document.getElementById('password')
-const button = document.getElementById('button')
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const lojin = document.getElementById('lojin');
 
-// es un evento que al darle click busca valores en el LS y los compara con los que estan en los inputs para darle acceso 
-button.addEventListener('click', (e) => {
-            e.preventDefault()
+// Función para iniciar sesión de usuario
+function iniciarSesion(email) {
+    localStorage.setItem('email', email);
+}
 
-    // obtiene los valores del local storage mediante el array
-    usuarios = JSON.parse(localStorage.getItem("array")) || []
-    console.log(usuarios);
+// Función para cerrar sesión de usuario
+function cerrarSesion() {
+    localStorage.removeItem('email');
+}
 
-    // con el metodo find le pido que busque dichos valores el el LS y los compare 
-    valores = usuarios.find(usu => usu.email == email.value && usu.password == password.value)
-    console.log(valores)
+// Función para verificar si hay una sesión activa
+function sesionActiva() {
+    return localStorage.getItem('email') !== null;
+}
 
-    // una condicion que siga que si son iguales los valores me de una alerta de bienvenido y si no otra alerta de error
-    if (!valores) {
-        swal("Error", "Contraseña ");
+// Evento de clic para iniciar sesión
+lojin.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // Obtener usuarios del localStorage
+    let usuarios = JSON.parse(localStorage.getItem("array")) || [];
+
+    // Encontrar usuario por correo electrónico y contraseña
+    let usuario = usuarios.find(usu => usu.email === emailInput.value && usu.password === passwordInput.value);
+
+    if (!usuario) {
+        swal("Error", "Correo electrónico o contraseña incorrectos.");
     } else {
+        // Iniciar sesión con el correo electrónico
+        iniciarSesion(usuario.email);
         swal({
             title: "Bienvenido",
-        })
-            .then((willDelete) => {
-                if (willDelete) {
-                    window.location.href = "index.html"
-                    localStorage.setItem("array", JSON.stringify(usuarios))
-                }
-            })
+        }).then((willDelete) => {
+            if (willDelete) {
+                window.location.href = "index.html";
+            }
+        });
     }
-})
+});
 
-// hace que los espacios de los inputs queden en blanco
-document.getElementById('email').value = "";
-document.getElementById('password').value = "";
-
+// Verificar si hay una sesión activa
+console.log('¿Hay una sesión activa?', sesionActiva());

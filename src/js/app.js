@@ -27,7 +27,7 @@ subirButton.addEventListener('click', function (){
   const archivo = imageUploader.files[0];
 
   if(archivo){
-    // leer archivo como url
+    // leer archivo como base 64
     const reader = new FileReader();
     reader.onload = function(e) {
 
@@ -61,12 +61,15 @@ function hacerZoom(src) {
   zoomImagen.src = src;
   zoomImagen.classList.add('zoomed')
 
+  // crear overlay para el fondo
   const overlay = document.createElement('div')
   overlay.classList.add('overlay')
 
+  // agregar la imagen y el overlay al body del html
   document.body.appendChild(zoomImagen)
   document.body.appendChild(overlay)
 
+// evento de clic en la imagen para cerrar el zoom
   zoomImagen.addEventListener('click', function(){
     document.body.removeChild(zoomImagen)
     document.body.removeChild(overlay)

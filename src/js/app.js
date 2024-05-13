@@ -5,7 +5,7 @@ const galeria = document.getElementById('galeria')
 const titlulos = document.getElementById('titulos')
 const tituloImagen = document.getElementById('tituloImagen')
 
-// evento del clic para subir la imagen en el index
+// evento para subir la imagen en el index
 subirButton.addEventListener('click', function (){
   const archivo = imageUploader.files[0];
 
@@ -16,7 +16,7 @@ subirButton.addEventListener('click', function (){
     const reader = new FileReader();
     reader.onload = function(e) {
 
-    // crear elemento de imagen
+    // crear elemento de la imagen
     const imagen = document.createElement('img');
     imagen.src = e.target.result;
 
@@ -33,7 +33,7 @@ subirButton.addEventListener('click', function (){
     // agregar imagen a la galeria
     galeria.appendChild(imagen);
 
-    // evento de clic para hacer zoom a la imagen
+    // evento para hacer zoom a la imagen
     imagen.addEventListener('click', function(){
       hacerZoom(imagen.src)
     })
@@ -42,7 +42,7 @@ subirButton.addEventListener('click', function (){
   }
 })
 
-// evento de clic para cerrar sesion 
+// evento para cerrar sesion 
 logoutButton.addEventListener('click', function(){
   
   // limpiargaleria
@@ -63,7 +63,7 @@ function hacerZoom(src) {
   document.body.appendChild(zoomImagen)
   document.body.appendChild(overlay)
 
-// evento de clic en la imagen para cerrar el zoom
+// evento para cerrar el zoom
   zoomImagen.addEventListener('click', function(){
     document.body.removeChild(zoomImagen)
     document.body.removeChild(overlay)

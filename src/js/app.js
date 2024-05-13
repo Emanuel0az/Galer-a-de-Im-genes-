@@ -1,20 +1,3 @@
-/*logout.addEventListener('click')
-function guardarImagen(){ {
-    let archivo = document.getElementById('imageUploader').files[0];
-    let reader = new FileReader();
-    
-    reader.onload = function (e) {
-      localStorage.setItem('imagen', e.target.result);
-    };
-    
-    if (archivo) {
-      reader.readAsDataURL(archivo);
-    }
-  }
-}
-console.log(button)*/
-
-
 const imageUploader = document.getElementById('imageUploader')
 const subirButton = document.getElementById('subir')
 const logoutButton = document.getElementById('logout')
@@ -26,6 +9,8 @@ const tituloImagen = document.getElementById('tituloImagen')
 subirButton.addEventListener('click', function (){
   const archivo = imageUploader.files[0];
 
+  let usuarioLoggeado = localStorage.getItem("email");
+
   if(archivo){
     // leer archivo como base 64
     const reader = new FileReader();
@@ -34,6 +19,15 @@ subirButton.addEventListener('click', function (){
     // crear elemento de imagen
     const imagen = document.createElement('img');
     imagen.src = e.target.result;
+
+    data = {
+      titulo: tituloImagen.value,
+      img: e.target.result, // esto es la imagen como base 64
+      email: usuarioLoggeado
+    }
+
+    localStorage.setItem("imagen", JSON.stringify(data))
+
     imagen.classList.add('imagen')
 
     // agregar imagen a la galeria
@@ -52,7 +46,7 @@ subirButton.addEventListener('click', function (){
 logoutButton.addEventListener('click', function(){
   
   // limpiargaleria
-  galeria.innerHTML = ""
+ localStorage.removeItem('email')
 })
 
 // funcion para hacer zoom

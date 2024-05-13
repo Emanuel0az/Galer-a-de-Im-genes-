@@ -20,7 +20,7 @@ function sesionActiva() {
 // Evento de clic para iniciar sesión
 lojin.addEventListener('click', (e) => {
     e.preventDefault();
-
+      
     // Obtener usuarios del localStorage
     let usuarios = JSON.parse(localStorage.getItem("array")) || [];
 

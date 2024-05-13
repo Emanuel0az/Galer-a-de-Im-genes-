@@ -5,7 +5,7 @@ const galeria = document.getElementById('galeria')
 const titlulos = document.getElementById('titulos')
 const tituloImagen = document.getElementById('tituloImagen')
 
-// evento del clic para subir la imagen
+// evento del clic para subir la imagen en el index
 subirButton.addEventListener('click', function (){
   const archivo = imageUploader.files[0];
 
